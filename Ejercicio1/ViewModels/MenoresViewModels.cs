@@ -41,7 +41,6 @@ namespace Ejercicio1.ViewModels
             Actualizar();
             ActualizarMenoresHoy();
             ActualizarMenoresMes();
-
         }
 
         private void VerMenoresDoceAños()
@@ -86,9 +85,6 @@ namespace Ejercicio1.ViewModels
             {
                 ListaMenores.Add(e);
             }
-
-
-
         }
         public void ActualizarMenoresHoy()
         {
