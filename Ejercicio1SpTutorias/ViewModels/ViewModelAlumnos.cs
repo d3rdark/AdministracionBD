@@ -137,11 +137,10 @@ namespace Ejercicio1SpTutorias.ViewModels
                         existeAlumno.NumeroControl = Alumno.NumeroControl;
                         existeAlumno.Promedio = Alumno.Promedio;
                         existeAlumno.Evaluacion = Alumno.Evaluacion;
-                        catalagos.Upadate(existeAlumno);
-                        GetAlumnos();
+                        catalagos.UpdateSP(existeAlumno);
                         Operacion = Accion.VerTutorados;
-                        Errores = "";
                         OnPropertyChanged();
+                        Regresar();
                     }
                 }
                 else
@@ -168,7 +167,9 @@ namespace Ejercicio1SpTutorias.ViewModels
         private void Regresar()
         {
             Operacion = Accion.VerTutorados;
+            GetAlumnos();
             Errores = "";
+            Alumno = null;
             OnPropertyChanged();
         }
 

@@ -34,10 +34,10 @@ namespace Ejercicio1SpTutorias.Repository
 
         public void UpdateSP(Alumnos entity)
         {
-            throw new NotImplementedException();
+            context.Database.ExecuteSqlRaw($"execute SP_Actualizar_alumno @P_Id ={entity.Id}, @P_Nombre ='{entity.Nombre}', @P_NumeroControl ='{entity.NumeroControl}', @P_Promedio={entity.Promedio} ;");
         }
 
-        public void Upadate(Alumnos entity)
+        public void Update(Alumnos entity)
         {
             context.Update(entity);
             context.SaveChanges();
