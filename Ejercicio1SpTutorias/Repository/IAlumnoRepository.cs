@@ -13,6 +13,7 @@ namespace Ejercicio1SpTutorias.Repository
         public IEnumerable<Alumnos> GetAlumnos();
         public void CreateSP(Alumnos entity);
         public void UpdateSP(Alumnos entity);
+        public void Upadate(Alumnos entity);
         public void Delete(Alumnos entity);
         public void Save();
         
