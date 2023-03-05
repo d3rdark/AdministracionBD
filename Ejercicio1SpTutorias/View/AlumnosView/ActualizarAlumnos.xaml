@@ -5,10 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Ejercicio1SpTutorias.View.AlumnosView"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="800">
     <DockPanel>
-        <TextBlock DockPanel.Dock="Top" Text="Actualizar Alumnos si jalo owo" FontSize="35"></TextBlock>
+        <TextBlock DockPanel.Dock="Top"  
+                   FontSize="35"
+                   TextAlignment="Center">
+            <Run Text="Actualizar Alumnos si jalo owo"></Run>
+            <Run Text="{Binding Alumno.Nombre}"></Run><Run>?</Run>
+        </TextBlock>
         <Image Source="https://cdn.discordapp.com/attachments/556648612810194967/1082005348501688390/FDoGR6CXEAUz8bI.png"
-               Width="250"/>
+               Width="650" Height="450" Stretch="UniformToFill"/>
     </DockPanel>
 </UserControl>
