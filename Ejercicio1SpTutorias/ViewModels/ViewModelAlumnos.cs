@@ -66,7 +66,26 @@ namespace Ejercicio1SpTutorias.ViewModels
 
         private void RegistrarAlumnos()
         {
-            throw new NotImplementedException();
+            Errores = "";
+            if (Alumno is not null)
+            {
+                if (ValidadorAlumno.Validar(Alumno, out List<string> errores))
+                {
+                    catalagos.CreateSP(Alumno);
+                    GetAlumnos();
+                    Operacion = Accion.VerTutorados;
+                    Errores = "";
+                    OnPropertyChanged();
+                }
+                else
+                {
+                    foreach (var item in errores)
+                    {
+                        Errores = $"{Errores} {item} {Environment.NewLine}";
+                    }
+                    OnPropertyChanged();
+                }
+            }
         }
 
         private void VerAlumnos()
@@ -86,6 +105,7 @@ namespace Ejercicio1SpTutorias.ViewModels
                 {
                     Alumnos clon = new Alumnos()
                     {
+                        Id = Alumno.Id,
                         Nombre = Alumno.Nombre,
                         NumeroControl = Alumno.NumeroControl,
                         Promedio = Alumno.Promedio,
@@ -109,11 +129,20 @@ namespace Ejercicio1SpTutorias.ViewModels
             {
                 if (ValidadorAlumno.Validar(Alumno, out List<string> errores))
                 {
-                    catalagos.Upadate(Alumno);
-                    GetAlumnos();
-                    Operacion = Accion.VerTutorados;
-                    Errores = "";
-                    OnPropertyChanged();
+                    var existeAlumno = catalagos.GetAlumnoById(Alumno.Id);
+                    if (existeAlumno != null)
+                    {
+                        existeAlumno.Id = Alumno.Id;
+                        existeAlumno.Nombre = Alumno.Nombre;
+                        existeAlumno.NumeroControl = Alumno.NumeroControl;
+                        existeAlumno.Promedio = Alumno.Promedio;
+                        existeAlumno.Evaluacion = Alumno.Evaluacion;
+                        catalagos.Upadate(existeAlumno);
+                        GetAlumnos();
+                        Operacion = Accion.VerTutorados;
+                        Errores = "";
+                        OnPropertyChanged();
+                    }
                 }
                 else
                 {
@@ -121,6 +150,7 @@ namespace Ejercicio1SpTutorias.ViewModels
                     {
                         Errores = $"{Errores} {item} {Environment.NewLine}";
                     }
+                    OnPropertyChanged();
                 }
             }
         }
@@ -157,6 +187,5 @@ namespace Ejercicio1SpTutorias.ViewModels
                 ListAlumnos.Add(item);
             }
         }
-
     }
 }

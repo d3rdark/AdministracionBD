@@ -4,9 +4,89 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Ejercicio1SpTutorias.View.AlumnosView"
+             xmlns:fa="http://schemas.fontawesome.com/icons/"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="600" d:DesignWidth="800">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Background="White">
+
+            <Label Height="60"
+                   Foreground="#00B4D8"
+                   Background="White"
+                   BorderBrush="#00B4D8"
+                   FontWeight="Bold"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   BorderThickness="0,0,0,10">Registro del alumno</Label>
+
+            <!--<TextBlock Text="{Binding Error}" Foreground="Red" FontWeight="Bold" FontSize="9"></TextBlock>-->
+
+            <TextBlock Margin="10,10,10,0" 
+                       FontSize="16">Numero de Control:</TextBlock>
+
+            <TextBox Margin="10"
+                     Text="{Binding Alumno.NumeroControl}"
+                     FontSize="16"
+                     Padding="5"></TextBox>
+
+            <TextBlock 
+                Margin="10,10,10,0" 
+                FontSize="16">Nombre:</TextBlock>
+
+            <TextBox Margin="10" 
+                     Text="{Binding Alumno.Nombre}"
+                     FontSize="16"
+                     Padding="5"></TextBox>
+
+            <TextBlock Margin="10,10,10,0" 
+                       FontSize="16">Promedio:</TextBlock>
+
+            <TextBox Margin="10" 
+                     Text="{Binding Alumno.Promedio}"
+                     FontSize="16"
+                     Padding="5"></TextBox>
+
+            <TextBlock Text="{Binding Errores}" 
+                       Foreground="#3A3A3A"
+                       Height="auto"
+                       TextAlignment="Justify"
+                       TextWrapping="Wrap"
+                       Margin="10,0,10,0"
+                       FontSize="15"
+                       Padding="0,5,5,5">
+            </TextBlock>
+
+            <WrapPanel HorizontalAlignment="Center" >
+
+                <Button DockPanel.Dock="Bottom" Background="{x:Null}"
+                    BorderThickness="0"   
+                    Command="{Binding RegistrarAlumnoCommand}"
+                    Margin="10,0,5,0" >
+
+                    <fa:ImageAwesome VerticalAlignment="Center"
+                                     Icon="Solid_Save" 
+                                     Width="55">
+
+                    </fa:ImageAwesome>
+
+                </Button>
+
+                <Button DockPanel.Dock="Bottom"
+                        Background="{x:Null}"
+                        BorderThickness="0"
+                        Command="{Binding RegresarCommand}"
+                        Margin="10,0,5,0">
+
+                    <fa:ImageAwesome VerticalAlignment="Center"
+                                     Icon="Solid_Undo"
+                                     Width="55">
+                    </fa:ImageAwesome>
+
+                </Button>
+
+            </WrapPanel>
+
+        </StackPanel>
+
+    </ScrollViewer>
 </UserControl>

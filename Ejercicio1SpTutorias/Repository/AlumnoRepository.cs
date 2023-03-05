@@ -40,6 +40,7 @@ namespace Ejercicio1SpTutorias.Repository
         public void Upadate(Alumnos entity)
         {
             context.Update(entity);
+            context.SaveChanges();
         }
 
         public void Save()
