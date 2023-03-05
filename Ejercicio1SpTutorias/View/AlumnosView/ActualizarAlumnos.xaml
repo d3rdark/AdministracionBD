@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="Ejercicio1SpTutorias.View.AlumnosView.ActualizarAlumnos"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Ejercicio1SpTutorias.View.AlumnosView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Text="Actualizar Alumnos si jalo owo" FontSize="35"></TextBlock>
+        <Image Source="https://cdn.discordapp.com/attachments/556648612810194967/1082005348501688390/FDoGR6CXEAUz8bI.png"
+               Width="250"/>
+    </DockPanel>
+</UserControl>
