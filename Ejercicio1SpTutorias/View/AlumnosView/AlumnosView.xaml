@@ -61,7 +61,7 @@
                                 <TextBlock DockPanel.Dock="Right" Margin="5"> 
 
                                 <Hyperlink Command="{Binding Source={x:Reference verAlumnos},
-                                    Path=DataContext.EditarAlumnoCommand}"
+                                    Path=DataContext.VerEditarAlumnoCommand}"
                                            CommandParameter="{Binding Id}">Editar</Hyperlink> 
 
                                 <Hyperlink Command="{Binding Source={x:Reference verAlumnos},
