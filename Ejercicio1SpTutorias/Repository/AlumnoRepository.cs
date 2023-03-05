@@ -37,6 +37,11 @@ namespace Ejercicio1SpTutorias.Repository
             throw new NotImplementedException();
         }
 
+        public void Upadate(Alumnos entity)
+        {
+            context.Update(entity);
+        }
+
         public void Save()
         {
             context.SaveChanges();
