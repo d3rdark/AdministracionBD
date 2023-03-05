@@ -59,7 +59,9 @@ namespace Ejercicio1SpTutorias.ViewModels
 
         private void VerAgregarAlumnos()
         {
-            throw new NotImplementedException();
+            Alumno = new Alumnos();
+            Operacion = Accion.AgregarTutorados;
+            OnPropertyChanged();
         }
 
         private void RegistrarAlumnos()
@@ -69,12 +71,22 @@ namespace Ejercicio1SpTutorias.ViewModels
 
         private void VerAlumnos()
         {
-            throw new NotImplementedException();
+            GetAlumnos();
+            Operacion = Accion.VerTutorados;
+            OnPropertyChanged();
         }
 
         private void VerEditarAlumnos(int obj)
         {
-            throw new NotImplementedException();
+
+            if (catalagos.GetAlumnoById(obj) != null)
+            {
+                Alumno = catalagos.GetAlumnoById(obj);
+                Operacion = Accion.EditarTutorados;
+                OnPropertyChanged();
+            }
+
+            
         }
 
         private void EdiarAlumnos()
@@ -94,7 +106,9 @@ namespace Ejercicio1SpTutorias.ViewModels
 
         private void Regresar()
         {
-            throw new NotImplementedException();
+            Operacion = Accion.VerTutorados;
+            Errores = "";
+            OnPropertyChanged();
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
