@@ -17,7 +17,7 @@ namespace Ejercicio1SpTutorias.ViewModels
     {
         AlumnoRepository catalagos = new AlumnoRepository();
 
-        
+
 
         public ObservableCollection<Alumnos> ListAlumnos { get; set; }
             = new ObservableCollection<Alumnos>();
@@ -82,16 +82,47 @@ namespace Ejercicio1SpTutorias.ViewModels
             if (catalagos.GetAlumnoById(obj) != null)
             {
                 Alumno = catalagos.GetAlumnoById(obj);
-                Operacion = Accion.EditarTutorados;
-                OnPropertyChanged();
+                if (Alumno != null)
+                {
+                    Alumnos clon = new Alumnos()
+                    {
+                        Nombre = Alumno.Nombre,
+                        NumeroControl = Alumno.NumeroControl,
+                        Promedio = Alumno.Promedio,
+                        Evaluacion = Alumno.Evaluacion
+                    };
+
+                    Alumno = clon;
+                    Operacion = Accion.EditarTutorados;
+                    OnPropertyChanged();
+
+                }
+
             }
 
-            
         }
 
         private void EdiarAlumnos()
         {
-            throw new NotImplementedException();
+            Errores = "";
+            if (Alumno != null)
+            {
+                if (ValidadorAlumno.Validar(Alumno, out List<string> errores))
+                {
+                    catalagos.Upadate(Alumno);
+                    GetAlumnos();
+                    Operacion = Accion.VerTutorados;
+                    Errores = "";
+                    OnPropertyChanged();
+                }
+                else
+                {
+                    foreach (var item in errores)
+                    {
+                        Errores = $"{Errores} {item} {Environment.NewLine}";
+                    }
+                }
+            }
         }
 
         private void VerEliminarAlumno(int obj)
