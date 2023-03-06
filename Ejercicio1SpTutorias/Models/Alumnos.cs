@@ -14,4 +14,6 @@ public partial class Alumnos
     public double Promedio { get; set; }
 
     public string? Evaluacion { get; set; }
+
+    public virtual ICollection<Asesorias> Asesorias { get; } = new List<Asesorias>();
 }
