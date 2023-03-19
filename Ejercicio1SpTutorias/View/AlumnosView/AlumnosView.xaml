@@ -46,7 +46,7 @@
                             <StackPanel>
 
                                 <TextBlock FontWeight="Bold" FontSize="20"
-                                           Text="{Binding NumeroControl}"/>
+                                           Text="{Binding NumeroControlNombre}" TextWrapping="Wrap"/>
                                 <TextBlock Text="{Binding Nombre}"></TextBlock>
 
                                 <TextBlock>
@@ -57,6 +57,10 @@
                                     <Run>)</Run>
 
                                 </TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Número de asesores: " FontSize="16"></TextBlock>
+                                    <TextBlock Text="{Binding Asesorias.Count}" FontWeight="Bold" FontSize="18"></TextBlock>
+                                </StackPanel>
 
                                 <TextBlock DockPanel.Dock="Right" Margin="5"> 
 

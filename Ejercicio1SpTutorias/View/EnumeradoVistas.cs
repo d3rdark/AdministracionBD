@@ -6,5 +6,17 @@ using System.Threading.Tasks;
 
 namespace Ejercicio1SpTutorias.View
 {
-    public enum Accion { VerTutorados, AgregarTutorados, EliminarTutorados, EditarTutorados }
+    public enum Accion
+    {
+        VerTutorados,
+        AgregarTutorados,
+        EliminarTutorados,
+        EditarTutorados,
+        VerAsesorias,
+        AgregarAsesorias,
+        EliminarAsesorias,
+        EditarAsesorias,
+        VerAsesoresEstaditicas,
+        EstadisticasAlumnos
+    }
 }

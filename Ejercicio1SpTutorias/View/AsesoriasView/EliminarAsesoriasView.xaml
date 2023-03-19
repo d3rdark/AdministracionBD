@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Ejercicio1SpTutorias.View.AsesoriasView.EliminarAsesoriasView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Ejercicio1SpTutorias.View.AsesoriasView"
+             xmlns:fa="http://schemas.fontawesome.com/icons/"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Background="White">
+        <Label Height="60"
+               Foreground="#00B4D8"
+               Background="White"
+               BorderBrush="#00B4D8"
+               FontWeight="Bold"
+               HorizontalContentAlignment="Left"
+               Padding="10,5,0,5"
+               BorderThickness="0,0,0,10"
+               FontSize="28">
+            Remover Asesor
+        </Label>
+
+        <StackPanel HorizontalAlignment="Center" Margin="0,10,0,20">
+            <TextBlock FontWeight="Bold" 
+                       HorizontalAlignment="Center"
+                       FontSize="18">
+                
+                <Run Text="¿"/>Desea eliminar a <Run Text="{Binding Asesor.Asesor}"></Run><Run Text="?"/>
+                <LineBreak/>
+                <Run Text="{Binding Asesor.Asesor}"/> 
+                <Run Text="es el asesor de "/><Run Text="{Binding Asesor.IdTutoradoNavigation.Nombre}"/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="Las asesorias iniciaron en la fecha de: "/><Run Text="{Binding Asesor.Fecha, StringFormat='dd/MM/yyyy'}"/>
+
+            </TextBlock>
+
+        </StackPanel>
+
+        <WrapPanel HorizontalAlignment="Center">
+
+            <Button DockPanel.Dock="Bottom" 
+                    Background="{x:Null}" 
+                    BorderThickness="0"
+                    Command="{Binding EliminarAsesoriaCommand}" Margin="10">
+                <fa:ImageAwesome   VerticalAlignment="Center"
+                                   Icon="Solid_Check" Width="65" >
+
+                </fa:ImageAwesome>
+
+            </Button>
+
+            <Button  DockPanel.Dock="Bottom"
+                     Background="{x:Null}" 
+                     BorderThickness="0"   
+                     Command="{Binding RegresarCommand}" 
+                     Margin="10">
+                <fa:ImageAwesome VerticalAlignment="Center"
+                                   Icon="Solid_Times" 
+                                   Width="40"></fa:ImageAwesome>
+            </Button>
+
+        </WrapPanel>
+
+    </StackPanel>
+</UserControl>
