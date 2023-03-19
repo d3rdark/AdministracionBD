@@ -156,12 +156,23 @@ namespace Ejercicio1SpTutorias.ViewModels
 
         private void VerEliminarAlumno(int obj)
         {
-            throw new NotImplementedException();
+            Alumno = catalagos.GetAlumnoById(obj);
+            if (Alumno != null)
+            {
+                Operacion = Accion.EliminarTutorados;
+                OnPropertyChanged();
+            }
         }
 
         private void EliminarAlumno()
         {
-            throw new NotImplementedException();
+            if (Alumno != null)
+            {
+                catalagos.Delete(Alumno);
+                catalagos.Save();
+                Regresar();
+            }
+
         }
 
         private void Regresar()
@@ -180,7 +191,7 @@ namespace Ejercicio1SpTutorias.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(pop));
         }
 
-        private void GetAlumnos()
+        public void GetAlumnos()
         {
             ListAlumnos.Clear();
             foreach (var item in catalagos.GetAlumnos())
