@@ -14,12 +14,12 @@ namespace Ejercicio1SpTutorias.Repository
 
         public void CreateSP(Alumnos entity)
         {
-            context.Database.ExecuteSqlRaw($"execute SP_Registrar_alumno @P_Nombre ='{entity.Nombre}', @P_NumeroControl ='{entity.NumeroControl}', @P_Promedio={entity.Promedio} ;");
+            context.Database.ExecuteSqlRaw($"execute sp_registraralumno @P_Nombre ='{entity.Nombre}', @P_NumeroControl ='{entity.NumeroControl}', @P_Promedio={entity.Promedio} ;");
         }
 
         public void Delete(Alumnos entity)
         {
-            context.Remove(entity);     
+            context.Remove(entity);
         }
 
         public Alumnos? GetAlumnoById(int id)
@@ -29,7 +29,7 @@ namespace Ejercicio1SpTutorias.Repository
 
         public IEnumerable<Alumnos> GetAlumnos()
         {
-            return context.Alumnos.OrderBy(x => x.Nombre);
+            return context.Alumnos.Include(x => x.Asesorias).OrderBy(x => x.Nombre);
         }
 
         public void UpdateSP(Alumnos entity)
