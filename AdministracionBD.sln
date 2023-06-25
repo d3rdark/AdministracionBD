@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio1SpTutorias", "Ejercicio1SpTutorias\Ejercicio1SpTutorias.csproj", "{DCF4D1E9-0487-4941-BE1F-BFAE4C853F51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmAfin", "FilmAfin\FilmAfin.csproj", "{97BDDB37-874E-4EF7-855A-1E7D7EB29C78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DCF4D1E9-0487-4941-BE1F-BFAE4C853F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCF4D1E9-0487-4941-BE1F-BFAE4C853F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCF4D1E9-0487-4941-BE1F-BFAE4C853F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97BDDB37-874E-4EF7-855A-1E7D7EB29C78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97BDDB37-874E-4EF7-855A-1E7D7EB29C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97BDDB37-874E-4EF7-855A-1E7D7EB29C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97BDDB37-874E-4EF7-855A-1E7D7EB29C78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

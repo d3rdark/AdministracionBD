@@ -1,0 +1,31 @@
+﻿<Window x:Class="FilmAfin.Views.VentaPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:FilmAfin.ViewModels"
+        xmlns:model="clr-namespace:FilmAfin.Models"
+        xmlns:local="clr-namespace:FilmAfin.Views"
+        mc:Ignorable="d"
+        Title="VentaPrincipal" Height="450" Width="800">
+   
+    <DockPanel>
+        <DockPanel.Resources>
+            <Style TargetType="TextBlock" x:Key="Titulo">
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="0 10 0 10"/>
+                <Setter Property="DockPanel.Dock" Value="Top"/>
+            </Style>
+            <Style TargetType="DataGrid">
+                <Setter Property="Margin" Value="20"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+        </DockPanel.Resources>
+        <TextBlock Text="Lista de las peliculas" 
+                   Style="{StaticResource Titulo}"/>
+
+        <DataGrid DockPanel.Dock="Bottom"></DataGrid>
+    </DockPanel>
+</Window>
